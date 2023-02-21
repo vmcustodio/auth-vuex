@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import BarraNavegacao from '@/components/BarraNavegacao';
+import BarraNavegacao from '@/components/BarraNavegacao.vue';
 
 export default {
   components: {
