@@ -1,6 +1,6 @@
 import Vuex from 'vuex';
 import Vue from 'vue';
-import http from 'http';
+import http from '@/http';
 
 Vue.use(Vuex);
 
@@ -11,7 +11,6 @@ const estado = {
 
 const mutations = {
   DEFINIR_USUARIO_LOGADO(state, { token, usuario }) {
-    //state e payload sendo desestruturado o obj
     state.token = token;
     state.usuario = usuario;
   },
@@ -23,7 +22,7 @@ const mutations = {
 
 const actions = {
   efetuarLogin({ commit }, usuario) {
-    return new Promise((resolve, reject) => [
+    return new Promise((resolve, reject) => {
       http
         .post('auth/login', usuario)
         .then((response) => {
@@ -36,8 +35,8 @@ const actions = {
         .catch((err) => {
           console.log(err);
           reject(err);
-        }),
-    ]);
+        });
+    });
   },
 };
 

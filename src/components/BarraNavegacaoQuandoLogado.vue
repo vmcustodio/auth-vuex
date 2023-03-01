@@ -1,29 +1,18 @@
 <template>
-  <ul class="navbar-nav mr-auto">
-    <li class="nav-item">
-      <router-link class="nav-link" to="/">Home</router-link>
-    </li>
-    <li class="nav-item">
-      <router-link to="/gerentes" class="nav-link">
-        Gerentes
-      </router-link>
-    </li>
-    <li class="nav-item">
-      <a href="#" class="nav-link" @click.prevent="efetuarLogout"
-        >Logout</a
-      >
-    </li>
-  </ul>
+  <div class="col-3">
+    <div class="card shadow">
+      <div class="card-body">
+        <h5 class="card-title">{{ gerente.nome }}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">
+          {{ gerente.agencia }}
+        </h6>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
 export default {
-  methods: {
-    efetuarLogout() {
-      //localStorage.removeItem('token');
-      this.$store.commit('DESLOGAR_USUARIO');
-      this.$router.push({ name: 'login' });
-    },
-  },
+  props: ['gerente'],
 };
 </script>

@@ -12,8 +12,8 @@
 </template>
 
 <script>
-import BarraNavegacaoQuandoLogado from './BarraNavegacaoQuandoLogado.vue';
-import BarraNavegacaoQuandoDeslogado from './BarraNavegacaoQuandoDeslogado.vue';
+import BarraNavegacaoQuandoLogado from './BarraNavegacaoQuandoLogado';
+import BarraNavegacaoQuandoDeslogado from './BarraNavegacaoQuandoDeslogado';
 
 export default {
   components: {
@@ -22,7 +22,7 @@ export default {
   },
   computed: {
     usuarioestaLogado() {
-      return Boolean(localStorage.getItem('token'))
+      return this.$store.state.token;
     },
   },
 };
