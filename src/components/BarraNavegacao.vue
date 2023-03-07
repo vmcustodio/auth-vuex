@@ -12,19 +12,19 @@
 </template>
 
 <script>
-import BarraNavegacaoQuandoLogado from './BarraNavegacaoQuandoLogado';
-import BarraNavegacaoQuandoDeslogado from './BarraNavegacaoQuandoDeslogado';
+import BarraNavegacaoQuandoLogado from "./BarraNavegacaoQuandoLogado";
+import BarraNavegacaoQuandoDeslogado from "./BarraNavegacaoQuandoDeslogado";
 
 export default {
   components: {
     BarraNavegacaoQuandoLogado,
-    BarraNavegacaoQuandoDeslogado,
+    BarraNavegacaoQuandoDeslogado
   },
   computed: {
     usuarioestaLogado() {
       return this.$store.state.token;
-    },
-  },
+    }
+  }
 };
 </script>
 <style>
