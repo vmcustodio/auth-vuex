@@ -4,21 +4,21 @@
       <router-link class="nav-link" to="/">Home</router-link>
     </li>
     <li class="nav-item">
-      <router-link to="/gerentes" class="nav-link">Gerentes</router-link>
+      <router-link to="/gerentes" class="nav-link"
+        >Gerentes</router-link
+      >
     </li>
     <li class="nav-item">
-      <a href="#" class="nav-link" @click.prevent="efetuarLogout">Logout</a>
+      <a href="#" class="nav-link" @click.prevent="efetuarLogout"
+        >Logout</a
+      >
     </li>
   </ul>
 </template>
 
 <script>
+import { logoutMixin } from '@/mixins';
 export default {
-  methods: {
-    efetuarLogout() {
-      this.$store.commit("DESLOGAR_USUARIO");
-      this.$router.push({ name: "login" });
-    }
-  }
+  mixins: [logoutMixin],
 };
 </script>
